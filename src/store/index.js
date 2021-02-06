@@ -1,7 +1,12 @@
-import { combineReducers } from 'redux';
+import {applyMiddleware, combineReducers, createStore} from 'redux';
 import count, {NAME_SPACE as COUNT_NAME_SPACE} from './count';
 
+// REDUX
 const rootReducer = combineReducers({
     [COUNT_NAME_SPACE] :count
 });
-export default rootReducer;
+
+const store = createStore(
+    rootReducer
+);
+export default store;
